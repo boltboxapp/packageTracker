@@ -9,7 +9,7 @@ const app = express();
 const conString = 'postgres://USERNAME:PASSWORD@HOST:PORT/databaseName';
 const client = new pg.Client(conString);
 client.connect();
-// client.on('error', err => console.error(err));
+client.on('error', err => console.error(err));
 
 app.use(cors());
 app.use(bodyParser.json());
