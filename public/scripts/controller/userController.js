@@ -2,10 +2,13 @@
 
 // Event Handler for #newUserField
 $('#newUserSubmit').on('click', function(){
-	console.log("inside #newUserField click handler");
 	// Get value from input via View function (getNewUserValue())
 	// Then pass the value to model function to add to database
-	createUser(getNewUserValue());
+	createUser(getNewUserValue(), function(results){
+		// now that we have the user information, and it has already been set to the current user in local storage:
+		// This is the point in the flow where we would want to hide the select user section and show the track packages section
+
+	});
 	
 })
 
@@ -13,5 +16,8 @@ $('#newUserSubmit').on('click', function(){
 $('#selectUserSubmit').on('click', function(){
 	// Get value from dropdown via View function (getSelectUserValue())
 	// Then pass the value to model function to grab that user's info from the database
-	getUser(getSelectUserValue());
+	getUser(getSelectUserValue(), function(results){
+		// now that we have the user information, and it has already been set to the current user in local storage:
+		// This is the point in the flow where we would want to hide the select user section and show the track packages section
+	});
 })
