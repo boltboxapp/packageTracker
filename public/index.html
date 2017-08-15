@@ -8,6 +8,9 @@
 	<main>
 		<section id="signIn">
 			<!-- Sign in to an existing user -->
+			<select>
+				<option default>Select a User</option>
+			</select>
 		</section>
 		<section id="newUser">
 			<!-- Create a New User -->
@@ -16,9 +19,32 @@
 		</section>
 		<section id="packages">
 			<!-- Add new pacakage for this user -->
-			<section id="addNewPackage"></section>
+			<section id="addNewPackage">
+				<h3>Enter the tracking number:</h3>
+				<input type="text" placeholder="Tracking #">
+			</section>
 			<!-- Display packages for this user -->
-			<section id="displayAllPackages"></section>
+			<section id="displayAllPackages">
+				<table>
+					<thead>
+						<tr>
+							<th>Tracking #</th>
+							<th>Carrier</th>
+							<th>Estimated Delivery Date</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- Sample Data -->
+						<tr>
+							<td>5345256453</td>
+							<td>FedEx</td>
+							<td>Thursday, 8/17</td>
+							<td>On Route</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
 		</section>
 	</main>
 	<footer></footer>
