@@ -7,7 +7,7 @@ $('#newUserSubmit').on('click', function(){
 	createUser(getNewUserValue(), function(results){
 		// now that we have the user information, and it has already been set to the current user in local storage:
 		// This is the point in the flow where we would want to hide the select user section and show the track packages section
-
+		setDisplayName();
 	});
 	
 })
@@ -16,8 +16,9 @@ $('#newUserSubmit').on('click', function(){
 $('#selectUserSubmit').on('click', function(){
 	// Get value from dropdown via View function (getSelectUserValue())
 	// Then pass the value to model function to grab that user's info from the database
-	getUser(getSelectUserValue(), function(results){
+	geteUserById(getSelectUserValue(), function(results){
 		// now that we have the user information, and it has already been set to the current user in local storage:
 		// This is the point in the flow where we would want to hide the select user section and show the track packages section
+		setDisplayName();
 	});
 })
