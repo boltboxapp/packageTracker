@@ -19,3 +19,11 @@ function createUser(user_name){
 }
 
 // get a user by the user_id
+function geteUserById(user_name){
+	$.ajax({
+		url: '/getUserByID',
+		method: 'GET',
+		data: {user_name: user_name}
+	})
+    .then(console.log);
+}
