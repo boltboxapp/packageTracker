@@ -1,1 +1,10 @@
 /************* LAYOUT STYLES *************/
+
+main {
+	margin: 5%;
+}
+
+section {
+	text-align: center;
+	padding: 2%;
+}

@@ -1,1 +1,23 @@
 /************* MODULE STYLES *************/
+
+/* HEADER */
+header {
+	background-color: #462300;
+	padding: 4%
+}
+header h1 {
+	text-align: center;
+	color: orange;
+}
+
+/* NAV */
+nav {
+	text-align: center;
+	margin-top: 5%;
+}
+
+nav li {
+	display: inline-block;
+	margin: 0% 5%;
+	color: white;
+}
