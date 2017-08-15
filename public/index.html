@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Package Tracker</title>
+</head>
+<body>
+	<header></header>
+	<main>
+		<section id="signIn">
+			<!-- Sign in to an existing user -->
+		</section>
+		<section id="newUser">
+			<!-- Create a New User -->
+			<input type="text" id="newUserField" placeholder="New User Name">
+			<button type="Submit" id="newUserSubmit">Submit</button>
+		</section>
+		<section id="packages">
+			<!-- Add new pacakage for this user -->
+			<section id="addNewPackage"></section>
+			<!-- Display packages for this user -->
+			<section id="displayAllPackages"></section>
+		</section>
+	</main>
+	<footer></footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.amd.js"></script> -->
+    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+
+    <script src="scripts/model/packages.js"></script>
+
+    <script src="scripts/model/users.js"></script>
+    <script src="scripts/view/userView.js"></script>
+    <script src="scripts/controller/userController.js"></script>
+</body>
+</html>
