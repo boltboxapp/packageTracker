@@ -9,7 +9,7 @@ $('#newUserSubmit').on('click', function(){
 		// This is the point in the flow where we would want to hide the select user section and show the track packages section
 		setDisplayName();
 	});
-	
+
 })
 
 // Event Handler for #selectUserField

@@ -20,7 +20,6 @@ function createUser(user_name, callback){
 		data: {user_name: user_name}
 	})
     .then(function(results){
-    	console.log(results);
     	localStorage.setItem('currentUser', JSON.stringify(results));
     	callback(results);
     });

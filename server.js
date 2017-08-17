@@ -6,12 +6,12 @@ const cors = require('cors')
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 const app = express();
-const conString = 'postgres://USERNAME:PASSWORD@HOST:PORT/databaseName';
+// const conString = 'postgres://USERNAME:PASSWORD@HOST:PORT/databaseName';
+const conString = 'postgres://localhost:5432/packagemanager';
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
 
-app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
@@ -31,7 +31,7 @@ app.get('/getUserByID', (request, response) => {
 
 app.post('/addUser', function(request, response) {
   client.query(
-    'INSERT INTO users (user_name) VALUES ($1) ON CONFLICT DO NOTHING;', [request.body.user_name])
+    'INSERT INTO users (user_name) VALUES ($1) ON CONFLICT DO NOTHING RETURNING *;', [request.body.user_name])
   .then(result => response.send(result.rows))
   .catch(console.error);
 });
@@ -44,12 +44,13 @@ app.get('/getPackagesByUser', (request, response) => {
 
 app.post('/addPackageByUser', function(request, response) {
   client.query(
-    'INSERT INTO packages (tracking_num, user_id, carrier) VALUES ($1, $2, $3) ON CONFLICT DO NOTHING;', [request.body.tracking_num, request.body.user_id, request.body.carrier])
+    'INSERT INTO packages (tracking_num, user_id, carrier_id) VALUES ($1, $2, $3) ON CONFLICT DO NOTHING RETURNING *;', [request.body.tracking_num, request.body.user_id, request.body.carrier])
   .then(result => response.send(result.rows))
   .catch(console.error);
 })
 
 createTables();
+// setCarriers();
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));
 

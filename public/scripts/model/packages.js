@@ -6,6 +6,7 @@
 
 // Add package to database
 function createTrackingNum(user_id, tracking_obj, callback){
+	console.log({user_id: user_id, tracking_num: tracking_obj.tracking_num, carrier_id: tracking_obj.carrier_id});
 	$.ajax({
 		url: '/addPackageByUser',
 		method: 'POST',
